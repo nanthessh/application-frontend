@@ -1,0 +1,31 @@
+<div class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Department</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Joining Date</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (employee of listEmployee; track employee.id) {
+      <tr>
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.department }}</td>
+        <td>{{ employee.salary }}</td>
+        <td>{{ employee.joinedDate | date }}</td>
+        <td>
+          <button class="btn btn-primary btn-sm me-1" (click)="editEmployee(employee.id)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteEmployee(employee.id)">Delete</button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
